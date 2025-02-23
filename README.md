@@ -25,81 +25,102 @@ Dự án này cung cấp một giải pháp IoT (Internet of Things) cho nhà m�
 ```
 .
 ├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── stamp_iot_project
-│   │   │           ├── controller
-│   │   │           ├── dto
-│   │   │               ├── response
-│   │   │                   ├── ApiResponse.java
-│   │   │           ├── entity
-│   │   │               ├── Department.java
-│   │   │               ├── Employee.java
-│   │   │               ├── Equipment.java
-│   │   │               ├── Inventory.java
-│   │   │               ├── InventoryTransaction.java
-│   │   │               ├── MaintenanceLog.java
-│   │   │               ├── Product.java
-│   │   │               ├── ProductionOrder.java
-│   │   │               ├── ProductionStep.java
-│   │   │               ├── QualityControl.java
-│   │   │               ├── RawMaterial.java
-│   │   │               ├── Report.java
-│   │   │               ├── Role.java
-│   │   │               ├── SecurityLog.java
-│   │   │               ├── Supplier.java
-│   │   │               ├── User.java
-│   │   │               ├── UserRole.java
-│   │   │               ├── UserRoleId.java
-│   │   │               ├── Warehouse.java
-│   │   │           ├── repository
-│   │   │               ├── DepartmentRepository.java
-│   │   │               ├── EmployeeRepository.java
-│   │   │               ├── EquipmentRepository.java
-│   │   │               ├── InventoryRepository.java
-│   │   │               ├── InventoryTransactionRepository.java
-│   │   │               ├── MaintenanceLogRepository.java
-│   │   │               ├── ProductionOrderRepository.java
-│   │   │               ├── ProductionStepRepository.java
-│   │   │               ├── ProductRepository.java
-│   │   │               ├── QualityControlRepository.java
-│   │   │               ├── RawMaterialRepository.java
-│   │   │               ├── ReportRepository.java
-│   │   │               ├── RoleRepository.java
-│   │   │               ├── SecurityLogRepository.java
-│   │   │               ├── SupplierRepository.java
-│   │   │               ├── UserRepository.java
-│   │   │               ├── UserRoleRepository.java
-│   │   │               ├── WarehouseRepository.java
-│   │   │           ├── security
-│   │   │               ├── SecurityConfig.java
-│   │   │           ├── service
-│   │   │               ├── DepartmentService.java
-│   │   │               ├── EmployeeService.java
-│   │   │               ├── EquipmentService.java
-│   │   │               ├── InventoryService.java
-│   │   │               ├── InventoryTransactionService.java
-│   │   │               ├── MaintenanceLogService.java
-│   │   │               ├── ProductionOrderService.java
-│   │   │               ├── ProductionStepService.java
-│   │   │               ├── ProductService.java
-│   │   │               ├── QualityControlService.java
-│   │   │               ├── RawMaterialService.java
-│   │   │               ├── ReportService.java
-│   │   │               ├── RoleService.java
-│   │   │               ├── SecurityLogService.java
-│   │   │               ├── SupplierService.java
-│   │   │               ├── UserRoleService.java
-│   │   │               ├── UserService.java
-│   │   │               ├── WarehouseService.java
-│   │   │           └── StampIotProjectApplication.java
-│   │   └── resources
-│   │       └── static
-│   │       └── templates
-│   │       └── application.properties
-│   │       └── data.sql
-│   └── test
+   ├── main
+      ├── java
+         └── com
+             └── stamp_iot_project
+                 ├── configuration
+                     ├── JwtFilter.java
+                     ├── JwtUtil.java
+                     └── SecurityConfig.java
+                 ├── controller
+                     ├── AuthController.java
+                     ├── DepartmentController.java
+                     ├── EmployeeController.java
+                     ├── EquipmentController.java
+                     ├── InventoryController.java
+                     ├── InventoryTransactionController.java
+                     ├── MaintenanceLogController.java
+                     ├── ProductController.java
+                     ├── ProductionOrderController.java
+                     ├── ProductionStepController.java
+                     ├── QualityControlController.java
+                     ├── RawMaterialController.java
+                     ├── ReportController.java
+                     ├── RoleController.java
+                     ├── SecurityLogController.java
+                     ├── UserController.java
+                     ├── UserRoleController.java
+                     └── WarehouseController.java
+                 ├── dto
+                     └── response
+                         ├── ApiResponse.java
+                         └── AuthResponse.java
+                 ├── entity
+                     ├── Department.java
+                     ├── Employee.java
+                     ├── Equipment.java
+                     ├── Inventory.java
+                     ├── InventoryTransaction.java
+                     ├── MaintenanceLog.java
+                     ├── Product.java
+                     ├── ProductionOrder.java
+                     ├── ProductionStep.java
+                     ├── QualityControl.java
+                     ├── RawMaterial.java
+                     ├── Report.java
+                     ├── Role.java
+                     ├── SecurityLog.java
+                     ├── Supplier.java
+                     ├── User.java
+                     ├── UserRole.java
+                     ├── UserRoleId.java
+                     └── Warehouse.java
+                 ├── repository
+                     ├── DepartmentRepository.java
+                     ├── EmployeeRepository.java
+                     ├── EquipmentRepository.java
+                     ├── InventoryRepository.java
+                     ├── InventoryTransactionRepository.java
+                     ├── MaintenanceLogRepository.java
+                     ├── ProductionOrderRepository.java
+                     ├── ProductionStepRepository.java
+                     ├── ProductRepository.java
+                     ├── QualityControlRepository.java
+                     ├── RawMaterialRepository.java
+                     ├── ReportRepository.java
+                     ├── RoleRepository.java
+                     ├── SecurityLogRepository.java
+                     ├── SupplierRepository.java
+                     ├── UserRepository.java
+                     ├── UserRoleRepository.java
+                     └── WarehouseRepository.java
+                 ├── service
+                     ├── DepartmentService.java
+                     ├── EmployeeService.java
+                     ├── EquipmentService.java
+                     ├── InventoryService.java
+                     ├── InventoryTransactionService.java
+                     ├── MaintenanceLogService.java
+                     ├── ProductionOrderService.java
+                     ├── ProductionStepService.java
+                     ├── ProductService.java
+                     ├── QualityControlService.java
+                     ├── RawMaterialService.java
+                     ├── ReportService.java
+                     ├── RoleService.java
+                     ├── SecurityLogService.java
+                     ├── SupplierService.java
+                     ├── UserRoleService.java
+                     ├── UserService.java
+                     └── WarehouseService.java
+                 └── StampIotProjectApplication.java
+      └── resources
+         ├── static
+         ├── templates
+         ├── application.properties
+         └── data.sql
+├── test
 ├── target
 ├── .gitattributes
 ├── .gitignore
