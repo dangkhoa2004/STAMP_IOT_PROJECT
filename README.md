@@ -12,7 +12,7 @@ Dự án này cung cấp một giải pháp IoT (Internet of Things) cho nhà m�
   - Tích hợp với các hệ thống khác hoặc giao tiếp qua các giao thức IoT (MQTT, HTTP, WebSocket, v.v.).
 
 - **Ngôn ngữ & Công nghệ**:
-  - Java 17 (hoặc phiên bản Java tương đương).
+  - Java 23 (hoặc phiên bản Java tương đương).
   - Spring Boot.
   - Maven (quản lý và build dự án).
   - JPA/Hibernate (quản lý kết nối và truy vấn cơ sở dữ liệu).
@@ -28,15 +28,77 @@ Dự án này cung cấp một giải pháp IoT (Internet of Things) cho nhà m�
 │   ├── main
 │   │   ├── java
 │   │   │   └── com
-│   │   │       └── iot_project
+│   │   │       └── stamp_iot_project
 │   │   │           ├── controller
 │   │   │           ├── dto
+│   │   │               ├── response
+│   │   │                   ├── ApiResponse.java
 │   │   │           ├── entity
+│   │   │               ├── Department.java
+│   │   │               ├── Employee.java
+│   │   │               ├── Equipment.java
+│   │   │               ├── Inventory.java
+│   │   │               ├── InventoryTransaction.java
+│   │   │               ├── MaintenanceLog.java
+│   │   │               ├── Product.java
+│   │   │               ├── ProductionOrder.java
+│   │   │               ├── ProductionStep.java
+│   │   │               ├── QualityControl.java
+│   │   │               ├── RawMaterial.java
+│   │   │               ├── Report.java
+│   │   │               ├── Role.java
+│   │   │               ├── SecurityLog.java
+│   │   │               ├── Supplier.java
+│   │   │               ├── User.java
+│   │   │               ├── UserRole.java
+│   │   │               ├── UserRoleId.java
+│   │   │               ├── Warehouse.java
 │   │   │           ├── repository
+│   │   │               ├── DepartmentRepository.java
+│   │   │               ├── EmployeeRepository.java
+│   │   │               ├── EquipmentRepository.java
+│   │   │               ├── InventoryRepository.java
+│   │   │               ├── InventoryTransactionRepository.java
+│   │   │               ├── MaintenanceLogRepository.java
+│   │   │               ├── ProductionOrderRepository.java
+│   │   │               ├── ProductionStepRepository.java
+│   │   │               ├── ProductRepository.java
+│   │   │               ├── QualityControlRepository.java
+│   │   │               ├── RawMaterialRepository.java
+│   │   │               ├── ReportRepository.java
+│   │   │               ├── RoleRepository.java
+│   │   │               ├── SecurityLogRepository.java
+│   │   │               ├── SupplierRepository.java
+│   │   │               ├── UserRepository.java
+│   │   │               ├── UserRoleRepository.java
+│   │   │               ├── WarehouseRepository.java
 │   │   │           ├── security
+│   │   │               ├── SecurityConfig.java
 │   │   │           ├── service
-│   │   │           └── IotProjectApplication.java
+│   │   │               ├── DepartmentService.java
+│   │   │               ├── EmployeeService.java
+│   │   │               ├── EquipmentService.java
+│   │   │               ├── InventoryService.java
+│   │   │               ├── InventoryTransactionService.java
+│   │   │               ├── MaintenanceLogService.java
+│   │   │               ├── ProductionOrderService.java
+│   │   │               ├── ProductionStepService.java
+│   │   │               ├── ProductService.java
+│   │   │               ├── QualityControlService.java
+│   │   │               ├── RawMaterialService.java
+│   │   │               ├── ReportService.java
+│   │   │               ├── RoleService.java
+│   │   │               ├── SecurityLogService.java
+│   │   │               ├── SupplierService.java
+│   │   │               ├── UserRoleService.java
+│   │   │               ├── UserService.java
+│   │   │               ├── WarehouseService.java
+│   │   │           └── StampIotProjectApplication.java
 │   │   └── resources
+│   │       └── static
+│   │       └── templates
+│   │       └── application.properties
+│   │       └── data.sql
 │   └── test
 ├── target
 ├── .gitattributes
@@ -62,7 +124,7 @@ Dự án này cung cấp một giải pháp IoT (Internet of Things) cho nhà m�
 
 ## 3. Yêu cầu hệ thống
 
-- **Java**: Phiên bản 17 (hoặc cao hơn).
+- **Java**: Phiên bản 23 (hoặc cao hơn).
 - **Maven**: Phiên bản 3.8+ (hoặc sử dụng `mvnw/mvnw.cmd` đi kèm).
 - **Cơ sở dữ liệu**: Tùy chọn (MySQL/PostgreSQL/H2, v.v.). Bạn cần cấu hình trong `application.properties` hoặc `application.yml`.
 
@@ -73,8 +135,8 @@ Dự án này cung cấp một giải pháp IoT (Internet of Things) cho nhà m�
 ### 4.1 Clone dự án
 
 ```bash
-git clone <URL_GITHUB_HOẶC_GIT_REPO>
-cd iot_project
+git clone https://github.com/dangkhoa2004/STAMP_IOT_PROJECT.git
+cd stamp_iot_project
 ```
 
 ### 4.2 Cấu hình
