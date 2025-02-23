@@ -23,7 +23,6 @@ Dự án này cung cấp một giải pháp IoT (Internet of Things) cho nhà m�
 ## 2. Cấu trúc thư mục
 
 ```
-.
 ├── src
    ├── main
       ├── java
