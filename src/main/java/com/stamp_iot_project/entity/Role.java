@@ -1,7 +1,7 @@
 package com.stamp_iot_project.entity;
 
-import lombok.Data;
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Data
 @Entity

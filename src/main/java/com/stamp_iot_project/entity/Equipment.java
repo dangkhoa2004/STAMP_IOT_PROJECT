@@ -1,9 +1,9 @@
 package com.stamp_iot_project.entity;
 
-import java.util.Date;
-
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.Date;
 
 @Data
 @Entity

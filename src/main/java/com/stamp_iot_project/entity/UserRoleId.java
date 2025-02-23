@@ -1,10 +1,9 @@
 package com.stamp_iot_project.entity;
 
+import jakarta.persistence.Embeddable;
 import lombok.Data;
 
-import jakarta.persistence.Embeddable;
 import java.io.Serializable;
-import java.util.Objects;
 
 @Data
 @Embeddable
