@@ -27,13 +27,13 @@ public class QualityControlService {
 
     public ApiResponse<List<QualityControl>> getAllQualityControls() {
         List<QualityControl> list = qcRepository.findAll();
-        return new ApiResponse<>("success", "Fetched quality controls thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp quality controls thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<QualityControl> getQualityControlById(Integer id) {
         Optional<QualityControl> opt = qcRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched quality control thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp quality control thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Quality control không tìm thấy", null, 404, new Date(), null);
     }

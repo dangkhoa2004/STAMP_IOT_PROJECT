@@ -26,13 +26,13 @@ public class InventoryService {
 
     public ApiResponse<List<Inventory>> getAllInventories() {
         List<Inventory> list = inventoryRepository.findAll();
-        return new ApiResponse<>("success", "Fetched inventories thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp inventories thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<Inventory> getInventoryById(Integer id) {
         Optional<Inventory> opt = inventoryRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched inventory thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp inventory thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Inventory không tìm thấy", null, 404, new Date(), null);
     }

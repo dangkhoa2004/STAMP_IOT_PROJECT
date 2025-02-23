@@ -22,13 +22,13 @@ public class ProductionStepService {
 
     public ApiResponse<List<ProductionStep>> getAllSteps() {
         List<ProductionStep> list = stepRepository.findAll();
-        return new ApiResponse<>("success", "Fetched steps thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp steps thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<ProductionStep> getStepById(Integer id) {
         Optional<ProductionStep> opt = stepRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched step thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp step thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Step không tìm thấy", null, 404, new Date(), null);
     }

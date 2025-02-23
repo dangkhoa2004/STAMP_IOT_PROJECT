@@ -18,13 +18,13 @@ public class WarehouseService {
 
     public ApiResponse<List<Warehouse>> getAllWarehouses() {
         List<Warehouse> warehouses = warehouseRepository.findAll();
-        return new ApiResponse<>("success", "Fetched warehouses thành công", warehouses, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp warehouses thành công", warehouses, 200, new Date(), null);
     }
 
     public ApiResponse<Warehouse> getWarehouseById(Integer id) {
         Optional<Warehouse> opt = warehouseRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched warehouse thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp warehouse thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Warehouse không tìm thấy", null, 404, new Date(), null);
     }

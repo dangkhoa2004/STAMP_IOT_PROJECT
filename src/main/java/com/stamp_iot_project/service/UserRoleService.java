@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,6 +24,11 @@ public class UserRoleService {
     private UserRepository userRepository;
     @Autowired
     private RoleRepository roleRepository;
+
+    public ApiResponse<List<UserRole>> getAllUserRole() {
+        List<UserRole> list = userRoleRepository.findAll();
+        return new ApiResponse<>("success", "Đã tìm nạp users thành công", list, 200, new Date(), null);
+    }
 
     public ApiResponse<UserRole> createUserRole(Integer userId, Integer roleId) {
         UserRole userRole = new UserRole();
@@ -49,4 +55,3 @@ public class UserRoleService {
         return new ApiResponse<>("success", "UserRole deleted", null, 200, new Date(), null);
     }
 }
-

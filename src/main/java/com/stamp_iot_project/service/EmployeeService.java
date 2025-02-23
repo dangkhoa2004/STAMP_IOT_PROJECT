@@ -22,13 +22,13 @@ public class EmployeeService {
 
     public ApiResponse<List<Employee>> getAllEmployees() {
         List<Employee> list = employeeRepository.findAll();
-        return new ApiResponse<>("success", "Fetched employees thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp employees thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<Employee> getEmployeeById(Integer id) {
         Optional<Employee> opt = employeeRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched employee thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp employee thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Employee không tìm thấy", null, 404, new Date(), null);
     }

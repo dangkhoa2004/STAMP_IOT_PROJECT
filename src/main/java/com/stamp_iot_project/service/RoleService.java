@@ -18,13 +18,13 @@ public class RoleService {
 
     public ApiResponse<List<Role>> getAllRoles() {
         List<Role> list = roleRepository.findAll();
-        return new ApiResponse<>("success", "Fetched roles thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp roles thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<Role> getRoleById(Integer id) {
         Optional<Role> opt = roleRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched role thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp role thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Role không tìm thấy", null, 404, new Date(), null);
     }

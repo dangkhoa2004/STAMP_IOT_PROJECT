@@ -22,13 +22,13 @@ public class InventoryTransactionService {
 
     public ApiResponse<List<InventoryTransaction>> getAllTransactions() {
         List<InventoryTransaction> list = transactionRepository.findAll();
-        return new ApiResponse<>("success", "Fetched transactions thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp transactions thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<InventoryTransaction> getTransactionById(Integer id) {
         Optional<InventoryTransaction> opt = transactionRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched transaction thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp transaction thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Transaction không tìm thấy", null, 404, new Date(), null);
     }

@@ -22,13 +22,13 @@ public class EquipmentService {
 
     public ApiResponse<List<Equipment>> getAllEquipment() {
         List<Equipment> list = equipmentRepository.findAll();
-        return new ApiResponse<>("success", "Fetched equipment thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp equipment thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<Equipment> getEquipmentById(Integer id) {
         Optional<Equipment> opt = equipmentRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched equipment thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp equipment thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Equipment không tìm thấy", null, 404, new Date(), null);
     }

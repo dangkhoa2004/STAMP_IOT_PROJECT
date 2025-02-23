@@ -21,13 +21,13 @@ public class SecurityLogService {
 
     public ApiResponse<List<SecurityLog>> getAllLogs() {
         List<SecurityLog> list = logRepository.findAll();
-        return new ApiResponse<>("success", "Fetched security logs thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp security logs thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<SecurityLog> getLogById(Integer id) {
         Optional<SecurityLog> opt = logRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched security log thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp security log thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Security log không tìm thấy", null, 404, new Date(), null);
     }

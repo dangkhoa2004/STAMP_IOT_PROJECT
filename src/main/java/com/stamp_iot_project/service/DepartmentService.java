@@ -18,13 +18,13 @@ public class DepartmentService {
 
     public ApiResponse<List<Department>> getAllDepartments() {
         List<Department> list = departmentRepository.findAll();
-        return new ApiResponse<>("success", "Fetched departments thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp departments thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<Department> getDepartmentById(Integer id) {
         Optional<Department> opt = departmentRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched department thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp department thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Department không tìm thấy", null, 404, new Date(), null);
     }

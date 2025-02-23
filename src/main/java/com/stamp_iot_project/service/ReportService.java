@@ -21,13 +21,13 @@ public class ReportService {
 
     public ApiResponse<List<Report>> getAllReports() {
         List<Report> list = reportRepository.findAll();
-        return new ApiResponse<>("success", "Fetched reports thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp reports thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<Report> getReportById(Integer id) {
         Optional<Report> opt = reportRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched report thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp report thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Report không tìm thấy", null, 404, new Date(), null);
     }

@@ -22,13 +22,13 @@ public class ProductionOrderService {
 
     public ApiResponse<List<ProductionOrder>> getAllOrders() {
         List<ProductionOrder> list = orderRepository.findAll();
-        return new ApiResponse<>("success", "Fetched orders thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp orders thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<ProductionOrder> getOrderById(Integer id) {
         Optional<ProductionOrder> opt = orderRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched order thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp order thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Order không tìm thấy", null, 404, new Date(), null);
     }

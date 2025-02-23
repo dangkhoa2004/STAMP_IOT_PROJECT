@@ -21,13 +21,13 @@ public class UserService {
 
     public ApiResponse<List<User>> getAllUsers() {
         List<User> list = userRepository.findAll();
-        return new ApiResponse<>("success", "Fetched users thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp users thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<User> getUserById(Integer id) {
         Optional<User> opt = userRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched user thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp user thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "User không tìm thấy", null, 404, new Date(), null);
     }
@@ -60,6 +60,20 @@ public class UserService {
     public ApiResponse<Void> deleteUser(Integer id) {
         userRepository.deleteById(id);
         return new ApiResponse<>("success", "User deleted", null, 200, new Date(), null);
+    }
+
+    public ApiResponse<User> loginByUsername(String username, String passwordHash) {
+        Optional<User> opt = userRepository.findByUsername(username);
+        if (opt.isPresent()) {
+            User user = opt.get();
+            if (user.getPasswordHash().equals(passwordHash)) {
+                return new ApiResponse<>("success", "Login successful", user, 200, new Date(), null);
+            } else {
+                return new ApiResponse<>("error", "Invalid credentials", null, 401, new Date(), null);
+            }
+        } else {
+            return new ApiResponse<>("error", "User not found", null, 404, new Date(), null);
+        }
     }
 }
 

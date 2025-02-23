@@ -25,13 +25,13 @@ public class MaintenanceLogService {
 
     public ApiResponse<List<MaintenanceLog>> getAllLogs() {
         List<MaintenanceLog> list = maintenanceLogRepository.findAll();
-        return new ApiResponse<>("success", "Fetched maintenance logs thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp maintenance logs thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<MaintenanceLog> getLogById(Integer id) {
         Optional<MaintenanceLog> opt = maintenanceLogRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched maintenance log thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp maintenance log thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Maintenance log không tìm thấy", null, 404, new Date(), null);
     }

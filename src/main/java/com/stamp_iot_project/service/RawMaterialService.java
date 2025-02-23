@@ -22,13 +22,13 @@ public class RawMaterialService {
 
     public ApiResponse<List<RawMaterial>> getAllMaterials() {
         List<RawMaterial> list = rawMaterialRepository.findAll();
-        return new ApiResponse<>("success", "Fetched materials thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp materials thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<RawMaterial> getMaterialById(Integer id) {
         Optional<RawMaterial> opt = rawMaterialRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched material thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp material thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Material không tìm thấy", null, 404, new Date(), null);
     }

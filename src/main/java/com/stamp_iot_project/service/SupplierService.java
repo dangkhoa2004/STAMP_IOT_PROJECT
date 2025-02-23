@@ -18,13 +18,13 @@ public class SupplierService {
 
     public ApiResponse<List<Supplier>> getAllSuppliers() {
         List<Supplier> list = supplierRepository.findAll();
-        return new ApiResponse<>("success", "Fetched suppliers thành công", list, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp suppliers thành công", list, 200, new Date(), null);
     }
 
     public ApiResponse<Supplier> getSupplierById(Integer id) {
         Optional<Supplier> opt = supplierRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched supplier thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp supplier thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Supplier không tìm thấy", null, 404, new Date(), null);
     }

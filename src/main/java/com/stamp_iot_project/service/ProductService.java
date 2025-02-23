@@ -18,13 +18,13 @@ public class ProductService {
 
     public ApiResponse<List<Product>> getAllProducts() {
         List<Product> products = productRepository.findAll();
-        return new ApiResponse<>("success", "Fetched products thành công", products, 200, new Date(), null);
+        return new ApiResponse<>("success", "Đã tìm nạp products thành công", products, 200, new Date(), null);
     }
 
     public ApiResponse<Product> getProductById(Integer id) {
         Optional<Product> opt = productRepository.findById(id);
         if (opt.isPresent()) {
-            return new ApiResponse<>("success", "Fetched product thành công", opt.get(), 200, new Date(), null);
+            return new ApiResponse<>("success", "Đã tìm nạp product thành công", opt.get(), 200, new Date(), null);
         }
         return new ApiResponse<>("error", "Product không tìm thấy", null, 404, new Date(), null);
     }
