@@ -1,7 +1,6 @@
 package com.stamp_iot_project.service;
 
 import com.stamp_iot_project.dto.response.ApiResponse;
-import com.stamp_iot_project.entity.Employee;
 import com.stamp_iot_project.entity.SecurityLog;
 import com.stamp_iot_project.repository.EmployeeRepository;
 import com.stamp_iot_project.repository.SecurityLogRepository;

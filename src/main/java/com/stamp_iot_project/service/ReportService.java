@@ -2,7 +2,6 @@ package com.stamp_iot_project.service;
 
 import com.stamp_iot_project.dto.response.ApiResponse;
 import com.stamp_iot_project.entity.Report;
-import com.stamp_iot_project.entity.User;
 import com.stamp_iot_project.repository.ReportRepository;
 import com.stamp_iot_project.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
