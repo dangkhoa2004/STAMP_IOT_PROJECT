@@ -1,4 +1,4 @@
-**# IoT Project - Hệ thống quản lý thiết bị IoT cho nhà máy sản xuất**
+**# STAMP_IOT_PROJECT - Hệ thống quản lý thiết bị IoT cho nhà máy sản xuất**
 
 Dự án này cung cấp một giải pháp IoT (Internet of Things) cho nhà máy sản xuất, hỗ trợ quản lý, giám sát và điều khiển các thiết bị trong quy trình sản xuất. Dự án được xây dựng trên nền tảng Spring Boot (Java), áp dụng kiến trúc đa tầng (controller, service, repository, entity, v.v.).
 

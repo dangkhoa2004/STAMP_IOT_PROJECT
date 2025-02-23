@@ -3,9 +3,10 @@ package com.stamp_iot_project.controller;
 import com.stamp_iot_project.dto.response.ApiResponse;
 import com.stamp_iot_project.entity.UserRole;
 import com.stamp_iot_project.service.UserRoleService;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/user-roles")

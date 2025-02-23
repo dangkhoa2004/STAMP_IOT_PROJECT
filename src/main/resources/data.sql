@@ -84,10 +84,10 @@ VALUES (1, '2025-01-10', 'Kiểm tra định kỳ', 1, 'Kiểm tra hiệu suất
        (3, '2025-03-20', 'Bảo dưỡng', 3, 'Bảo dưỡng xe nâng', 150.00, '2025-09-20', 'Scheduled');
 
 -- 15. Bảng User (tham chiếu employee_id)
-INSERT INTO `User` (username, password_hash, email, employee_id, status)
-VALUES ('user1', 'hash1', 'user1@example.com', 1, 'Active'),
-       ('user2', 'hash2', 'user2@example.com', 2, 'Active'),
-       ('user3', 'hash3', 'user3@example.com', 3, 'Active');
+INSERT INTO `User` (username, password, email, employee_id, status, created_at, updated_at)
+VALUES ('user1', 'password1', 'user1@example.com', 1, 'Active', NOW(), NOW()),
+       ('user2', 'password2', 'user2@example.com', 2, 'Active', NOW(), NOW()),
+       ('user3', 'password3', 'user3@example.com', 3, 'Active', NOW(), NOW());
 
 -- 16. Bảng Role
 INSERT INTO Role (role_name, description)
