@@ -10,6 +10,4 @@ import java.io.Serializable;
 public class UserRoleId implements Serializable {
     private Integer userId;
     private Integer roleId;
-
-    // Bạn có thể tạo constructor, equals và hashCode (Lombok @Data đã hỗ trợ một phần)
 }
